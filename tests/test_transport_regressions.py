@@ -453,7 +453,7 @@ class ResponsesTransportRegressionTests(unittest.TestCase):
         self.assertEqual(get_json.call_count, 2)
         self.assertTrue(
             get_json.call_args_list[0].args[0].endswith(
-                "/api/v1/model/result/pred_123"
+                "/api/v1/model/prediction/pred_123"
             )
         )
         download_outputs.assert_called_once()

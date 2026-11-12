@@ -104,7 +104,7 @@ Submit endpoint:
 
 - `POST https://api.atlascloud.ai/api/v1/model/generateImage`
 
-Default model and payload:
+Default model and example payload (without `--size` or `CODEX_IMAGE_SIZE` the CLI sends `1024x1024`; `1536x1024` below is an explicit example):
 
 ```json
 {
@@ -116,11 +116,11 @@ Default model and payload:
 }
 ```
 
-Result endpoint:
+Prediction endpoint:
 
-- `GET https://api.atlascloud.ai/api/v1/model/result/{request_id}`
+- `GET https://api.atlascloud.ai/api/v1/model/prediction/{prediction_id}`
 
-The CLI sends exactly one generation POST. It then polls the result endpoint
+The CLI sends exactly one generation POST. It then polls the prediction endpoint
 with bounded backoff until `completed`/`succeeded`, a terminal failure, or the
 configured timeout. Returned image URLs are downloaded without forwarding the
 Atlas API key.

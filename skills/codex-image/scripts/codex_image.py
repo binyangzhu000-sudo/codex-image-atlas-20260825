@@ -1489,7 +1489,7 @@ def poll_atlas_prediction(
             fail(f"Atlas prediction {request_id} timed out after {timeout} seconds")
         prediction = unwrap_atlas_prediction(
             get_json(
-                f"{ATLAS_API_BASE}/model/result/{request_id}",
+                f"{ATLAS_API_BASE}/model/prediction/{request_id}",
                 api_key,
                 max(1, math.ceil(remaining)),
             )
